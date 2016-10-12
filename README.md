@@ -41,32 +41,32 @@ fvecs_ivecs_read(Matrix<T>& dataset, const std::string& filename, int start, int
 dataset			-	Matrix类型的类。
 filename		-	文件路径
 start			-	开始的位置。从1开始计算。
-end				-	结束的位置。不能超过文档本身包含的数据个数。
+end			-	结束的位置。不能超过文档本身包含的数据个数。
 
 test_main.cpp中提供了4个测试函数，用以测试不同数据集下不同的算法的性能。
 摘录如下。
 
 kd-tree在SIFT1M数据集下的测试函数
 void test_kdtree_sift(size_t knn,int tree_num)
-knn				-	搜索的近邻个数
+knn			-	搜索的近邻个数
 tree_num		-	搜索时要使用的树的个数
 
 LSH在SIFT1M数据集下的测试函数
 void test_lsh_sift(size_t knn,unsigned int table_number,unsigned int key_size,float gap_w)
-knn				-	搜索的近邻个数
-table_number	-	用的哈希表个数
+knn			-	搜索的近邻个数
+table_number		-	用的哈希表个数
 key_size		-	关键字的个数。第一次哈希后得到的向量维数。
 gap_w			-	分割间隔
 
 kd-tree在GIST1M数据集下的测试函数
 void test_kdtree_gist(size_t knn,int tree_num)
-knn				-	搜索的近邻个数
+knn			-	搜索的近邻个数
 tree_num		-	搜索时要使用的树的个数
 
 LSH在GIST1M数据集下的测试函数
 void test_lsh_gist(size_t knn,unsigned int table_number,unsigned int key_size,float gap_w)
-knn				-	搜索的近邻个数
-table_number	-	用的哈希表个数
+knn			-	搜索的近邻个数
+table_number		-	用的哈希表个数
 key_size		-	关键字的个数。第一次哈希后得到的向量维数。
 gap_w			-	分割间隔
 
