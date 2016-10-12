@@ -22,8 +22,8 @@ dataset/sift 		文件夹下面存放的是SIFT1M测试数据集。
 dataset/gist 		文件夹下面存放的是GIST1M测试数据集。
 				
 flann/algorithms	包含LSH和KDTrees实现的具体源文件。	
-flann/io			b包含读取读取和存储数据的源文件。
-flann/util			常用的一些数据结构等。
+flann/io		包含读取读取和存储数据的源文件。
+flann/util		常用的一些数据结构等。
 
 output				存储输出的文件
 
