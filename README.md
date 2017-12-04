@@ -100,7 +100,7 @@ void test_lsh_gist(size_t knn,unsigned int table_number,unsigned int key_size,fl
 为0选择kdtree方式检索，为1选择lsh方式检索。
 可以修改代码忽略掉这个定义。
 
-*	在	```C++test_main.cpp  int main( void )```函数中，
+*	在	```test_main.cpp  int main( void )```函数中，
 有几组已经存在和测试过的测试组。以供参考。
 
 更多的详细信息见注释。
