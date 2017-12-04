@@ -1,3 +1,4 @@
+#	ReadMe :skull:
 
 ##	工程说明
 
@@ -10,7 +11,7 @@
 
 
 ##	文档结构
-|项目			|说明｜	
+|项目			|说明	
 |--|--|
 |flann.vcxproj		|VS2013建立的测试工程，用兼容的VS编译器打开即能运行	|
 |test_main.cpp		|这个源文件中包含了测试的主要函数,添加这个源文件到空白工程即可快速开始实验		|		
@@ -44,10 +45,10 @@ fvecs_ivecs_read(Matrix<T>& dataset, const std::string& filename, int start, int
 |start			|	开始的位置。从1开始计算	|
 |end			|	结束的位置。不能超过文档本身包含的数据个数	|
 
-test_main.cpp中提供了4个测试函数，用以测试不同数据集下不同的算法的性能
+*	test_main.cpp中提供了4个测试函数，用以测试不同数据集下不同的算法的性能
 摘录如下
 
-*	kd-tree在SIFT1M数据集下的测试函数
+1.	kd-tree在SIFT1M数据集下的测试函数
 	
 ```C++	
 void test_kdtree_sift(size_t knn,int tree_num)
@@ -57,7 +58,7 @@ void test_kdtree_sift(size_t knn,int tree_num)
 |knn			|	搜索的近邻个数	|
 |tree_num		|	搜索时要使用的树的个数	|
 
-*	LSH在SIFT1M数据集下的测试函数
+2.	LSH在SIFT1M数据集下的测试函数
 
 ```C++
 void test_lsh_sift(size_t knn,unsigned int table_number,unsigned int key_size,float gap_w)
@@ -69,7 +70,7 @@ void test_lsh_sift(size_t knn,unsigned int table_number,unsigned int key_size,fl
 |key_size		|	关键字的个数,第一次哈希后得到的向量维数|
 |gap_w			|	分割间隔|
 
-*	kd-tree在GIST1M数据集下的测试函数
+3.	kd-tree在GIST1M数据集下的测试函数
 ```C++
 void test_kdtree_gist(size_t knn,int tree_num)
 ```
@@ -78,7 +79,7 @@ void test_kdtree_gist(size_t knn,int tree_num)
 |knn			|	搜索的近邻个数 |
 |tree_num	|	搜索时要使用的树的个数 |
 
-*	LSH在GIST1M数据集下的测试函数
+4.	LSH在GIST1M数据集下的测试函数
 
 ```C++
 void test_lsh_gist(size_t knn,unsigned int table_number,unsigned int key_size,float gap_w)
@@ -92,25 +93,26 @@ void test_lsh_gist(size_t knn,unsigned int table_number,unsigned int key_size,fl
 
 *	每个函数根据输入的参数，均独立的完成了读取数据，建立索引，查询数据，输出信息的功能。
 
-在test_main.cpp的开头有一个宏定义
+*	在test_main.cpp的开头有一个宏定义
+```C++
 #define LSH_INDEX_ENABLE (1)	
+```
 为0选择kdtree方式检索，为1选择lsh方式检索。
 可以修改代码忽略掉这个定义。
 
-在test_main.cpp的int main( void )函数中，
+*	在	```C++test_main.cpp  int main( void )```函数中，
 有几组已经存在和测试过的测试组。以供参考。
 
 更多的详细信息见注释。
 
 #	注意事项
-虽然GIST1M数据集在测试时分为三次读取、查询，但有时仍可能分配内存失败，
-请保证系统有足够的空间进行分配，否则程序可能会运行失败。
+*	虽然GIST1M数据集在测试时分为三次读取、查询，但有时仍可能分配内存失败，请保证系统有足够的空间进行分配，否则程序可能会运行失败。
 
-目前只支持fvecs和ivecs文件的读取，若是其他格式请修改读取数据的代码。
+*	目前只支持fvecs和ivecs文件的读取，若是其他格式请修改读取数据的代码。
 
-当测试的参数不当时可能程序的运行时间会非常长。
+*	当测试的参数不当时可能程序的运行时间会非常长。
 
-源文件采用的都是相对路径，改动文件路径请修改对应的代码。
+*	源文件采用的都是相对路径，改动文件路径请修改对应的代码。
 
 
 
